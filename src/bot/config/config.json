@@ -1,0 +1,22 @@
+{
+  "MESSAGES": {
+      "START": {
+        "TEXT": "Hey, @<USER_NAME>! Welcome to TapSwap!\nTap on the coin and see your balance rise.\n\nTapSwap is a Decentralized Exchange on the Solana Blockchain. The biggest part of TapSwap Token TAPS distribution will occur among the players here.\n\nGot friends, relatives, co-workers? Bring them all into the game. More buddies, more coins."
+      },
+      "HELP": {
+        "TEXT": "Explore the complete guide\n\nTap to Earn:\nnTapSwap is an addictive clicker game where you accumulate Shares by tapping the screen.\n\nLeagues:\nClimb the ranks by earning more Shares and outperforming others in the leagues.\n\nBoosts:\nUnlock boosts and complete tasks to maximize your Shares earnings.\n\nFriends:\nInvite others and both of you will receive bonuses. Assist your friends in advancing to higher leagues for bigger Shares rewards.\n\nThe Purpose:\nCollect as many Shares as possible and exchange them for TAPS, TapSwap Token on Solana Blockchain.\n\nType /help to access this guide."
+      },
+      "PROFILE": {
+        "TEXT": "<USER_NAME> profile\n\nBronze League\nTotal score: 337\nBalance: 103837\n\n /profile for personal stats"
+      },
+      "INVITE": {
+        "TEXT": "Invite your friends and get bonuses for each invited friend!"
+      },
+      "FRIEND" : {
+        "TEXT": "Share with your friends and earn bonuses for each friend you invite and for their activity:\n\nYour referral link: https://t.me/tapswap_mirror_bot?start=r_<ID>"
+      },
+      "SOCIALS": {
+        "TEXT": "Join our socials so you do not miss any important news or updates."
+      }
+    }
+}
