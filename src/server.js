@@ -3,10 +3,13 @@ require('dotenv').config();
 const { createServer } = require('http');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const routes = require('./routes');
+
 
 const usersControllers = require('./controllers/users');
 
 const sequelize = require('./db');
+const setupSwagger = require("./swagger/swagger");
 
 const app = express();
 const httpServer = createServer(app);
@@ -20,10 +23,9 @@ app.get("/", (req, res) => {
 });
 
 
-app.get("/login", usersControllers.login);
-app.post("/user/:id", usersControllers.getUser);
+app.use('/', routes);
 
-
+setupSwagger(app);
 sequelize.sync().then(() => {
     console.log('console.log(process.env);', process.env.DB_NAME);
     console.log('Database & tables created!');
