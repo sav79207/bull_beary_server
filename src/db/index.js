@@ -1,9 +1,11 @@
 const { Sequelize } = require('sequelize');
+require('dotenv').config({path: "../"});
 
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_LOGIN, process.env.DB_PASSWORD, {
-    host: 'localhost',
+    host: '127.0.0.1',
+    port: 3306,
     dialect: 'mysql',
-    logging: false,  // Вимкнення журналювання SQL запитів у консолі
+    logging: false,
 });
 
 sequelize.authenticate()

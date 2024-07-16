@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 const { createServer } = require('http');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -19,12 +20,14 @@ app.get("/", (req, res) => {
 });
 
 
-app.get("/api/login", usersControllers.login);
+app.get("/login", usersControllers.login);
+app.post("/user/:id", usersControllers.getUser);
 
 
 sequelize.sync().then(() => {
+    console.log('console.log(process.env);', process.env.DB_NAME);
     console.log('Database & tables created!');
-    httpServer.listen(4001, () => {
-        console.log(`API is listening on port 4001`);
+    httpServer.listen(3000, () => {
+        console.log(`API is listening on port 3000`);
     });
 });

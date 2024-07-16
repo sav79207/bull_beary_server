@@ -23,8 +23,12 @@ User.init(
             allowNull: true
         },
         refId: {
-            type: DataTypes.STRING,
-            allowNull: true
+            type: DataTypes.INTEGER.UNSIGNED,
+            allowNull: true,
+            references: {
+                model: User, // 'users' would also work
+                key: 'id'
+            }
         },
         tg_file_id: {
             type: DataTypes.STRING,
@@ -37,5 +41,8 @@ User.init(
         timestamps: true
     }
 );
+
+User.belongsTo(User, { as: 'referral', foreignKey: 'refId' });
+User.hasMany(User, { as: 'referrals', foreignKey: 'refId' });
 
 module.exports = User;

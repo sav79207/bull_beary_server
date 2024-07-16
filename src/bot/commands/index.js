@@ -1,4 +1,5 @@
-
+const path = require("node:path");
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 const config = require("../config/config.json");
 const { join } = require('path');
 const User = require("../../models/User.js");
@@ -6,7 +7,6 @@ const {login} = require("../../controllers/users");
 
 
 const web_app_url = process.env.WEB_APP_URL
-const BOT_TOKEN = process.env.BOT_TOKEN
 
 
 
@@ -42,7 +42,7 @@ module.exports = function (bot) {
                 first_name: msg.from.first_name,
                 language_code: msg.from.language_code,
                 refId: refId ? refId : null,
-                tg_file_id: photo.file_id ? photo.file_id : null
+                tg_file_id: photo?.file_id ? photo.file_id : null
             }
 
             await checkAndSaveUser(user)
